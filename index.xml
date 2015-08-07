@@ -1,0 +1,13 @@
+<craft>
+    <parameter name="radius" type="int" default="20"/>
+    <parameter name="thickness" type="int" default="5"/>
+    <script type="text/openjscad">
+        
+        var c = circle({r: params.thickness/2, fn: 30, center: true}).translate([params.radius - params.thickness/2,0,0])
+        
+        var ring = rotate_extrude(c)
+        
+        this.add(ring)
+        
+    </script>
+</craft>
